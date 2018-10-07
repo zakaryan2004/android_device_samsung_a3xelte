@@ -21,6 +21,9 @@ LOCAL_PATH := device/samsung/a3xelte
 
 TARGET_OTA_ASSERT_DEVICE := a3xelte,a3xeltexx,a3xelteub,a3xeltedo
 
+# Include path
+TARGET_SPECIFIC_HEADER_PATH += $(LOCAL_PATH)/include
+
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
 
