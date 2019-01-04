@@ -293,7 +293,15 @@ static int camera2_cancel_auto_focus(struct camera_device * device)
     if(!device)
         return -EINVAL;
 
-    return VENDOR_CALL(device, cancel_auto_focus);
+    /* If there is no preview window yet */
+    if (gPreviewWindow == 0) {
+        /* The cancel_auto_focus has no ill effects */
+        return VENDOR_CALL(device, cancel_auto_focus);
+    } else {
+        /* Otherwise block it as it crashes the camera */
+        ALOGV("%s->BLOCKED as it crashes the camera app!", __FUNCTION__);
+        return 0;
+    }
 }
 
 static int camera2_take_picture(struct camera_device * device)
