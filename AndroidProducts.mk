@@ -17,4 +17,4 @@
 LOCAL_PATH := device/samsung/a3xelte
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_PATH)/lineage_a3xelte.mk
+    $(LOCAL_PATH)/aosp_a3xelte.mk
